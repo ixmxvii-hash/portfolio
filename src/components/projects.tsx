@@ -1,7 +1,8 @@
 "use client"
 
-import Image from "next/image"
 import { motion } from "motion/react"
+
+const basePath = "/portfolio"
 import { CopeShowcase } from "./showcases/cope-showcase"
 import { IcitShowcase } from "./showcases/icit-showcase"
 import { OdooShowcase } from "./showcases/odoo-showcase"
@@ -102,7 +103,7 @@ export function Projects() {
     <section id="work" className="relative px-6 py-32">
       {/* Globe decoration */}
       <div className="pointer-events-none absolute -right-20 top-20 hidden opacity-[0.06] xl:block">
-        <Image src="/assets/globe-network.png" alt="" width={400} height={400} />
+        <img src={`${basePath}/assets/globe-network.png`} alt="" width={400} height={400} />
       </div>
 
       <div className="relative mx-auto max-w-6xl">

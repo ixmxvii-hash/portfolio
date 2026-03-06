@@ -1,7 +1,8 @@
 "use client"
 
-import Image from "next/image"
 import { motion } from "motion/react"
+
+const basePath = "/portfolio"
 
 export function Hero() {
   return (
@@ -30,7 +31,7 @@ export function Hero() {
         className="pointer-events-none absolute left-[5%] top-[20%] hidden lg:block"
       >
         <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}>
-          <Image src="/assets/hero-crystal.png" alt="" width={180} height={180} className="opacity-50" />
+          <img src={`${basePath}/assets/hero-crystal.png`} alt="" width={180} height={180} className="opacity-50" />
         </motion.div>
       </motion.div>
 
@@ -42,7 +43,7 @@ export function Hero() {
         className="pointer-events-none absolute right-[5%] bottom-[25%] hidden lg:block"
       >
         <motion.div animate={{ y: [0, 12, 0] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
-          <Image src="/assets/code-brackets.png" alt="" width={150} height={150} className="opacity-40" />
+          <img src={`${basePath}/assets/code-brackets.png`} alt="" width={150} height={150} className="opacity-40" />
         </motion.div>
       </motion.div>
 
@@ -54,7 +55,7 @@ export function Hero() {
         className="pointer-events-none absolute right-[15%] top-[15%] hidden lg:block"
       >
         <motion.div animate={{ y: [0, -8, 0], scale: [1, 1.1, 1] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
-          <Image src="/assets/glow-orb.png" alt="" width={40} height={40} className="opacity-60" />
+          <img src={`${basePath}/assets/glow-orb.png`} alt="" width={40} height={40} className="opacity-60" />
         </motion.div>
       </motion.div>
 
@@ -65,7 +66,7 @@ export function Hero() {
         className="pointer-events-none absolute left-[12%] bottom-[30%] hidden lg:block"
       >
         <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}>
-          <Image src="/assets/glow-orb.png" alt="" width={28} height={28} className="opacity-40" />
+          <img src={`${basePath}/assets/glow-orb.png`} alt="" width={28} height={28} className="opacity-40" />
         </motion.div>
       </motion.div>
 
