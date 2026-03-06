@@ -3,9 +3,25 @@
 import { motion } from "motion/react"
 import { experience } from "@/lib/data"
 
+const basePath = "/portfolio"
+
 export function About() {
   return (
     <section id="about" className="relative px-6 py-32">
+      {/* Prism - right side */}
+      <div className="pointer-events-none absolute right-[3%] top-24 hidden opacity-[0.12] xl:block">
+        <motion.div animate={{ y: [0, -10, 0], rotate: [0, 8, 0] }} transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}>
+          <img src={`${basePath}/assets/prism.png`} alt="" width={140} height={140} />
+        </motion.div>
+      </div>
+
+      {/* Glow orb - left */}
+      <div className="pointer-events-none absolute left-[6%] bottom-32 hidden opacity-20 xl:block">
+        <motion.div animate={{ y: [0, 8, 0], scale: [1, 1.15, 1] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
+          <img src={`${basePath}/assets/glow-orb.png`} alt="" width={50} height={50} />
+        </motion.div>
+      </div>
+
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

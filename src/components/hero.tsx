@@ -70,6 +70,30 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
+      {/* Prism - top right */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.15 }}
+        transition={{ duration: 2, delay: 1.5 }}
+        className="pointer-events-none absolute right-[20%] top-[12%] hidden lg:block"
+      >
+        <motion.div animate={{ y: [0, -10, 0], rotate: [0, 10, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}>
+          <img src={`${basePath}/assets/prism.png`} alt="" width={70} height={70} />
+        </motion.div>
+      </motion.div>
+
+      {/* Spheres - bottom left */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.12 }}
+        transition={{ duration: 2, delay: 1.8 }}
+        className="pointer-events-none absolute left-[18%] bottom-[18%] hidden lg:block"
+      >
+        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}>
+          <img src={`${basePath}/assets/spheres.png`} alt="" width={55} height={55} />
+        </motion.div>
+      </motion.div>
+
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -127,23 +151,24 @@ export function Hero() {
           </a>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2"
-          >
-            <span className="text-[10px] uppercase tracking-[0.2em] text-text-muted">Scroll</span>
-            <div className="h-8 w-px bg-gradient-to-b from-text-muted to-transparent" />
-          </motion.div>
-        </motion.div>
       </div>
+
+      {/* Scroll indicator - outside the text container so buttons don't overlap */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-2"
+        >
+          <span className="text-[10px] uppercase tracking-[0.2em] text-text-muted">Scroll</span>
+          <div className="h-8 w-px bg-gradient-to-b from-text-muted to-transparent" />
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

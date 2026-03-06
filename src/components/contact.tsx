@@ -2,6 +2,8 @@
 
 import { motion } from "motion/react"
 
+const basePath = "/portfolio"
+
 const socials = [
   {
     label: "GitHub",
@@ -37,6 +39,18 @@ export function Contact() {
     <section id="contact" className="relative px-6 py-32">
       {/* Top divider */}
       <div className="absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-border to-transparent" />
+
+      {/* Light ribbon - spans width */}
+      <div className="pointer-events-none absolute left-0 right-0 top-1/2 -translate-y-1/2 hidden opacity-[0.04] xl:block">
+        <img src={`${basePath}/assets/light-ribbon.png`} alt="" className="w-full" />
+      </div>
+
+      {/* Spheres accent */}
+      <div className="pointer-events-none absolute left-[8%] top-20 hidden opacity-[0.1] xl:block">
+        <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}>
+          <img src={`${basePath}/assets/spheres.png`} alt="" width={60} height={60} />
+        </motion.div>
+      </div>
 
       <div className="mx-auto max-w-3xl text-center">
         <motion.div
